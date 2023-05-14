@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    /* CSS styles */
+    body{
+        background-color: rgb(116, 228, 106);
+    }
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin: 0;
+      padding: 0 0 0 20px;
+      
+    }
+
+    ol {
+      list-style-type: decimal;
+      margin: 0;
+      padding: 0 0 0 20px;
+
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+      margin: 0 0 10px 0;
+    }
+
+    pre {
+      font-family: monospace;
+      background-color: antiquewhite;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Introduction:</h2>
+  <ul>
+    <li><strong>Playfair Cipher:</strong> Playfair cipher is a polygraphic substitution cipher that was invented by Charles Wheatstone in 1854. It uses a 5x5 grid of letters to encrypt plaintext into ciphertext.</li>
+    <li><strong>Vigenere Cipher:</strong> Vigenere cipher is a polyalphabetic substitution cipher that was invented by Giovan Battista Bellaso in the 16th century. It uses a keyword to encrypt plaintext into ciphertext.</li>
+    <li><strong>Multiplicative Cipher:</strong> Multiplicative cipher is a monoalphabetic substitution cipher that uses modular arithmetic to encrypt plaintext into ciphertext.</li>
+    <li><strong>Rail Fence Cipher:</strong> Rail fence cipher is a transposition cipher that was used by the ancient Greeks and Spartans. It rearranges the plaintext by writing it diagonally over a number of "rails" or lines, then reading off the ciphertext from left to right.</li>
+  </ul>
+
+  <h2>Objectives:</h2>
+  <ol>
+    <li>To understand the working of different cryptographic algorithms.</li>
+    <li>To implement these algorithms using programming.</li>
+    <li>To demonstrate the functionality of these algorithms with proper examples.</li>
+  </ol>
+
+  <h2>Solution Methodology:</h2>
+  
+  <p><strong>Playfair Cipher:</strong></p>
+  <ol type="i">
+    <li>Generate a key by removing duplicate letters and adding a filler letter if needed.</li>
+    <li>Create a 5x5 matrix using the key and remaining letters of the alphabet.</li>
+    <li>Break the plaintext into pairs of letters and apply the following rules:</li>
+    <li>If the letters are in the same row, replace each letter with the letter to its right (wrap around if needed).</li>
+    <li>If the letters are in the same column, replace each letter with the letter below it (wrap around if needed).</li>
+    <li>If the letters are not in the same row or column, create a rectangle with the two letters and replace them with the letters on the opposite corners of the rectangle.</li>
+    <li>Repeat steps iii to vi for the entire plaintext.</li>
+  </ol>
+  
+  <p><strong>Vigenere Cipher:</strong></p>
+  <ol type="i">
+    <li>Generate a key by repeating a keyword until it is the same length as the plaintext.</li>
+    <li>Convert each letter of the plaintext and key to their corresponding numerical values.</li>
+    <li>Add the numerical values of the plaintext and key modulo 26.</li>
+    <li>Convert the resulting values back to letters.</li>
+    <li>Repeat steps iii to iv for the entire plaintext.</li>
+  </ol>
+  
+  <p><strong>Multiplicative Cipher:</strong></p>
+  <ol type="i">
+    <li>Choose a multiplier that is coprime to 26 (i.e., does not share any factors with 26).</li>
+    <li>Convert each letter of the plaintext to its corresponding numerical value.</li>
+    <li>Multiply the numerical value of each letter by the multiplier modulo 26.</li>
+    <li>Convert the resulting values back to letters.</li>
+    <li>Repeat steps iii to iv for the entire plaintext.</li>
+  </ol>
+  
+  <p><strong>Rail Fence Cipher:</strong></p>
+  <ol type="i">
+    <li>Write the plaintext diagonally over a specified number of rows (rails).</li>
+    <li>Read off the ciphertext from left to right, starting at the top row and moving down to the bottom row in a zigzag pattern.</li>
+    <li>Repeat steps i to ii for the entire plaintext.</li>
+    <h2>Output Example:</h2>
+
+<p><strong>a) Playfair Cipher:</strong></p>
+<p>Input:</p>
+<pre>Key: EXAMPLE
+Plaintext: HELLO WORLD</pre>
+<p>Output:</p>
+<pre>Ciphertext: DPEKQ XGOSR</pre>
+
+<p><strong>b) Vigenere Cipher:</strong></p>
+<p>Input:</p>
+<pre>Keyword: LEMON
+Plaintext: ATTACKATDAWN</pre>
+<p>Output:</p>
+<pre>Ciphertext: LXFOPVEFRNHR</pre>
+
+<p><strong>c) Multiplicative Cipher:</strong></p>
+<p>Input:</p>
+<pre>Multiplier: 7
+Plaintext: ENCRYPT</pre>
+<p>Output:</p>
+<pre>Ciphertext: MAJQXAU</pre>
+
+<p><strong>d) Rail Fence Cipher:</strong></p>
+<p>Input:</p>
+<pre>Rails: 3
+Plaintext: DEFENDTHEEASTWALLOFTHECASTLE</pre>
+<p>Output:</p>
+<pre>Ciphertext: DDTAWLETESELEODHTCFNHESALFEHE</pre>
+<h2>Conclusion:</h2>
+
+<p>In conclusion, the Playfair cipher, Vigenere cipher, Multiplicative cipher, and Rail fence cipher are all important cryptographic algorithms that can be used to encrypt plaintext into ciphertext. Each algorithm has its own strengths and weaknesses and is suitable for different use cases. It is important to choose the appropriate algorithm based on the requirements of the application.</p>
